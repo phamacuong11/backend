@@ -1,0 +1,15 @@
+var CryptoJS = require("crypto-js");
+
+var result = "eyJhbW91bnQiOjU1MDAwLCJhbW91bnRfZm9yZWlnbiI6bnVsbCwiYW1vdW50X29yaWdpbmFsIjpudWxsLCJhbW91bnRfcmVxdWVzdCI6NTUwMDAsImJhbmsiOm51bGwsImNhcmRfYnJhbmQiOiJTTUwiLCJjYXJkX2luZm8iOnsiY2FyZF9uYW1lIjoiTkdVWUVOIFZBTiBBIiwiaGFzaF9jYXJkIjoiNTUwNGI5ODA4Y2RhYmU3YmRkMWQ4NWI0MDM5MjBiMjUiLCJjYXJkX2JyYW5kIjoiU01MIiwiY2FyZF9udW1iZXIiOiI5NzA0MDB4eHh4eHgwMDE4In0sImNyZWF0ZWRfYXQiOiIyMDIyLTA0LTEyVDAwOjI2OjAwLjAwMDAwMFoiLCJjdXJyZW5jeSI6IlZORCIsImRlc2NyaXB0aW9uIjoiVGhhbmggVG_DoW4gVGnhu4FuIFPDoWNoICIsImV4Y19yYXRlIjpudWxsLCJmYWlsdXJlX3JlYXNvbiI6bnVsbCwiZm9yZWlnbl9jdXJyZW5jeSI6bnVsbCwiaW52b2ljZV9ubyI6IjYyNTUyOTA5YTZmOWNmYmRmMDdkMDJlZCIsImxhbmciOm51bGwsIm1ldGhvZCI6IkFUTV9DQVJEIiwicGF5bWVudF9ubyI6Mjk0MDE5ODk2MzMxLCJzdGF0dXMiOjUsInRlbm9yIjpudWxsfQ";
+var checksum = "EEE97758746F1949D47413F0D275F7331C622403A4DD360AAB6957AA1B623916";
+
+var checksum_key = "zlW20K17FMWpm9JhUH1PPSNDxqGLMZ97";
+
+const sha256Data = CryptoJS.SHA256(result + checksum_key);
+
+console.log(checksum);
+console.log(sha256Data.toString().toUpperCase());
+
+let buff = Buffer.from(result, 'base64');
+let text = buff.toString('ascii');
+console.log(text);
